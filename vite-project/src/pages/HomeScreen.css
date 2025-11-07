@@ -8,7 +8,8 @@
   background-color: #FFFFFF;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  gap: 14px;
+  justify-items: center;
 }
 
 .coupon,
@@ -16,21 +17,23 @@
 .course-view,
 .login {
   display: block;
-  padding: 15px;
+  padding: 10px;
   background-color: #4CAF50;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   transition: background-color 0.2s;
   border: none;
-  width: 100%;
+  width: 70%;
   cursor: pointer;
   text-align: center;
-  height: 100px;
+  height: 140px;
+  
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
 }
 
 .coupon:hover,
