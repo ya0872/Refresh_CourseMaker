@@ -1,0 +1,49 @@
+.home {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  font-family: sans-serif;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.coupon,
+.course-create,
+.course-view,
+.login {
+  display: block;
+  padding: 15px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: center;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coupon:hover,
+.course-create:hover,
+.course-view:hover,
+.login:hover {
+  background-color: #45a049;
+}
+
+.login {
+  background-color: #6c757d;
+}
+
+.login:hover {
+  background-color: #5a6268;
+}
