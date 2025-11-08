@@ -1,13 +1,15 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import { Login } from './Login';
 
 const HomePage = () => {
   return (
     <div>
       <h2>Home Page</h2>
-      <nav>
-        <Link to="/login">Go to Login</Link>
-      </nav>
+      <h1>
+        <nav>
+          <Link to="/login">Go to Login</Link>
+        </nav>
+      </h1>
     </div>
   );
 }
@@ -17,8 +19,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<Navigate to="/login" />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/homePage" element={<HomePage />} />
       </Routes>
     </div>
   )
