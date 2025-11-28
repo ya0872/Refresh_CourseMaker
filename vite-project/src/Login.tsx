@@ -4,12 +4,16 @@ import { useState } from 'react';
 export const Login = () => {
     const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const [loginError, setLoginError] = useState<string | null>(null);
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState<string | null>(null);
 
     const handleCheckSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
-        setError(null);
+        setLoginError(null);
 
         try {
             const res = await fetch('http://localhost:4000/api/check', {
@@ -30,11 +34,11 @@ export const Login = () => {
                 navigate('/homePage')
             }
             else {
-                setError("backend did not return the value")
+                setLoginError("backend did not return the value")
             }
         }
         catch (err: any){
-            setError(err.message || "communication error was happened.")
+            setLoginError(err.message || "communication error was happened.")
             console.error(err);
         }
         finally{
@@ -42,14 +46,48 @@ export const Login = () => {
         }
     }
     
+    const handlePasswordChange = (password: React.ChangeEvent<HTMLInputElement>) => {
+        const input = password.target.value;
+        setPasswordError(null);
+        setPassword(password.target.value);
+
+        if (0 < input.length && input.length < 8){
+            setPasswordError("パスワードは8文字以上である必要があります。");
+        }else{
+            setPasswordError('');
+        }
+    }
+
     return(
         <div className='Login'>
             <h2>Login Page</h2>
+
+            <input type="email"
+                name="email"
+                autoComplete="email" 
+                value={email}
+                onChange={(email) => setEmail(email.target.value)}
+                placeholder="username@example.com"
+            required/>
+            <br/>
+            <input type="password"
+                name="password"
+                autoComplete="current-password"
+                placeholder="password"
+                onChange={handlePasswordChange}
+            required/>
+            <div style={{ height: '20px', marginTop: '5px' }}>
+                {passwordError && (
+                    <p style={{ color: "red", fontSize: "0.8rem", margin: 0 }}>
+                        {passwordError}
+                    </p>
+                )}
+            </div>
             <form onSubmit={handleCheckSubmit}>
                 <button type="submit" disabled={isLoading}>
                     {isLoading ? 'now communicate with server...' : 'go to homePage with server communication'}
                 </button>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
+                {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
             </form>
         </div>
     )
