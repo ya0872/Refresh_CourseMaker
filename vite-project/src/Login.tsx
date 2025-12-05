@@ -51,8 +51,16 @@ export const Login = () => {
         setPasswordError(null);
         setPassword(password.target.value);
 
-        if (0 < input.length && input.length < 8){
-            setPasswordError("パスワードは8文字以上である必要があります。");
+        if (0 === input.length) return;
+
+        if (input.length < 10){
+            setPasswordError("パスワードは10文字以上である必要があります。");
+        }else if(!/[a-zA-Z0-9]/.test(input)){
+            setPasswordError("パスワードは英数字のみを含む必要があります。");
+        }else if(!(/[a-z]/.test(input)&&/[A-Z]/.test(input))){
+            setPasswordError("パスワードは大文字と小文字、両方の英字を含む必要があります。");
+        }else if(!/\d/.test(input)){
+            setPasswordError("パスワードは少なくとも1つの数字を含む必要があります。");
         }else{
             setPasswordError('');
         }
