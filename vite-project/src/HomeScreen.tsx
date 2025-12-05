@@ -3,6 +3,8 @@ import './HomeScreen.css'
 
 function HomeScreen() {
     const navigate = useNavigate();
+    const todaySteps = 0; 
+
     const login = () => {
         navigate('/');
     };
@@ -14,21 +16,32 @@ function HomeScreen() {
             </header>
 
             <div className="home">
-                <Link to="/coupon" className="coupon">
-                    特典・クーポン機能
-                </Link>
 
-                <Link to="/course-create" className="course-create">
-                    コース作成機能
-                </Link>
+                <div className="step-status-area">
+                    <h2>今日の歩数</h2>
+                    <div className="step-count">
+                        <span className="number">{todaySteps.toLocaleString()}</span>
+                        <span className="unit">歩</span>
+                    </div>
+                </div>
 
-                <Link to="/courses-view" className="course-view">
-                    作成したコースの閲覧機能
-                </Link>
+                <div className="menu-grid">
+                    <Link to="/coupon" className="coupon">
+                        特典・クーポン
+                    </Link>
 
-                <button onClick={login} className="login">
-                    ログイン画面に戻る
-                </button>
+                    <Link to="/course-create" className="course-create">
+                        コース作成
+                    </Link>
+
+                    <Link to="/courses-view" className="course-view">
+                        作成したコースの閲覧
+                    </Link>
+
+                    <button onClick={login} className="login">
+                        ログイン画面に戻る
+                    </button>
+                </div>
             </div>
 
             <footer className="footer-band"></footer>
