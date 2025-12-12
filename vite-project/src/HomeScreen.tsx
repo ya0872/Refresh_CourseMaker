@@ -1,12 +1,15 @@
 import { Link, useNavigate } from 'react-router-dom'
 import './HomeScreen.css'
+import { useState } from 'react'
 
 function HomeScreen() {
     const navigate = useNavigate();
-    const todaySteps = 0; 
-
+    const [todaySteps, setTodaySteps] = useState(0);
     const login = () => {
         navigate('/');
+    };
+    const addSteps = () => {
+        setTodaySteps(todaySteps + 1); 
     };
     
     return(
@@ -23,6 +26,12 @@ function HomeScreen() {
                         <span className="number">{todaySteps.toLocaleString()}</span>
                         <span className="unit">歩</span>
                     </div>
+                    <button 
+                        onClick={addSteps} 
+                        style={{ marginTop: '10px', padding: '5px 10px' }}
+                    >
+                        +
+                    </button>
                 </div>
 
                 <div className="menu-grid">
