@@ -35,7 +35,7 @@ function HomeScreen() {
                 </div>
 
                 <div className="menu-grid">
-                    <Link to="/coupon" className="coupon">
+                    <Link to="/couponreward" className="couponreward">
                         特典・クーポン
                     </Link>
 
