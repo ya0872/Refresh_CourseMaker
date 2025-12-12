@@ -6,7 +6,7 @@ function HomeScreen() {
     const navigate = useNavigate();
     const [todaySteps, setTodaySteps] = useState(0);
     const login = () => {
-        navigate('/');
+        navigate('/login');
     };
     const addSteps = () => {
         setTodaySteps(todaySteps + 1); 
