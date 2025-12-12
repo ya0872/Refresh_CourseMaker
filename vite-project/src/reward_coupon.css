@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  gap: 20px;
+  background-color: #eee;
+  padding: 10px;
+}
+
+.container {
+  padding: 20px;
+}
+
+.reward-card {
+  display: flex;
+  justify-content: space-between;
+  background: #f4f4f4;
+  padding: 10px;
+  margin-top: 10px;
+}
