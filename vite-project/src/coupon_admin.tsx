@@ -1,4 +1,5 @@
 import { useState } from "react";
+import './reward_coupon.css';
 
 export default function Admin() {
   const [rewardList, setRewardList] = useState([

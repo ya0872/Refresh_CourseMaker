@@ -1,6 +1,8 @@
 import { useState } from "react";
+import './reward_coupon.css';
 
-export default function Home() {
+
+export default function CouponReward() {
   const [points, setPoints] = useState(() => Number(localStorage.getItem("points") || 0));
 
   const [rewards, setRewards] = useState([
@@ -46,3 +48,4 @@ export default function Home() {
     </div>
   );
 }
+

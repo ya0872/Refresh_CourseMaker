@@ -1,6 +1,9 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
 import { Login } from './Login';
 import  HomeScreen  from './HomeScreen'
+import CouponReward from  './coupon_reward';
+import Admin from './coupon_admin'; 
+
 
 const HomePage = () => {
   return (
@@ -13,7 +16,13 @@ const HomePage = () => {
         <nav>
           <Link to="/HomeScreen">Go to HomesScreen</Link>
         </nav>
-      </h1>
+        <nav>
+          <Link to="/couponreward">Go to CouponReward</Link>
+        </nav>
+        <nav>
+          <Link to="/couponadmin">Go to Admin Page</Link> 
+        </nav>
+     </h1>
     </div>
   );
 }
@@ -27,6 +36,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/homePage" element={<HomePage />} />
         <Route path="/HomeScreen" element={<HomeScreen />} />
+        <Route path="/couponreward" element={<CouponReward />} />
+        <Route path="/couponadmin" element={<Admin />} />
       </Routes>
     </div>
   )
