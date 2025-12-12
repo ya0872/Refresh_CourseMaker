@@ -1,5 +1,6 @@
 import { Routes, Route, Link, Navigate } from 'react-router-dom';
-import { Login } from './Login';
+import { Login } from './LoginSystem/Login';
+import { NewEntry } from './LoginSystem/NewEntry';
 import  HomeScreen  from './HomeScreen'
 
 const HomePage = () => {
@@ -23,8 +24,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Navigate to="/login" />} />
+        <Route path="/" element={<Navigate to="/newEntry" />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/newEntry" element={<NewEntry />} />
         <Route path="/homePage" element={<HomePage />} />
         <Route path="/HomeScreen" element={<HomeScreen />} />
       </Routes>
