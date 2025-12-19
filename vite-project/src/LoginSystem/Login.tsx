@@ -21,7 +21,7 @@ export const Login = () => {
         let isMatch = false;
 
         try {
-            const res = await fetch('${import.meta.env.VITE_API_URL}/api/data', {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/data`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
