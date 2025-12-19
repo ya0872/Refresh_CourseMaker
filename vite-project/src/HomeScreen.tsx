@@ -6,7 +6,7 @@ function HomeScreen() {
     const navigate = useNavigate();
     const [todaySteps, setTodaySteps] = useState(0);
     const login = () => {
-        navigate('/');
+        navigate('/login');
     };
     const addSteps = () => {
         setTodaySteps(todaySteps + 1); 
@@ -35,7 +35,7 @@ function HomeScreen() {
                 </div>
 
                 <div className="menu-grid">
-                    <Link to="/coupon" className="coupon">
+                    <Link to="/couponreward" className="couponreward">
                         特典・クーポン
                     </Link>
 
