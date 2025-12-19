@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import '../index.css'
+import './Login.css'
 
 export const NewEntry = () => {
     const navigate = useNavigate();
@@ -48,7 +48,7 @@ export const NewEntry = () => {
         }else if(/[^a-zA-Z0-9]/.test(input)){
             setPasswordError("パスワードは英数字のみを含む必要があります。");
         }else if(!(/[a-z]/.test(input)&&/[A-Z]/.test(input))){
-            setPasswordError("パスワードは大文字と小文字、両方の英字を含む必要があります。");
+            setPasswordError("パスワードは大文字と小文字、\n両方の英字を含む必要があります。");
         }else if(!/\d/.test(input)){
             setPasswordError("パスワードは少なくとも1つの数字を含む必要があります。");
         }else{
@@ -69,6 +69,7 @@ export const NewEntry = () => {
     }
 
     return(
+        <div className='LoginRoot'>
         <div className='Login'>
             <h2>New Entry</h2>
 
@@ -79,8 +80,8 @@ export const NewEntry = () => {
                 onChange={handleEmailChange}
                 placeholder="username@example.com"
             required/>
-            <div style={{ height: '20px', marginTop: '5px' }}>
-                {emailError && <p style={{ color: "red", fontSize: "0.8rem", margin: 0 }}>{emailError}</p>}
+            <div style={{ height: '20px'}}>
+                {emailError && <p>{emailError}</p>}
             </div>
             <input type="password"
                 name="password"
@@ -88,14 +89,15 @@ export const NewEntry = () => {
                 placeholder="password"
                 onChange={handlePasswordChange}
             required/>
-            <div style={{ height: '20px', marginTop: '5px' }}>
-                {passwordError && <p style={{ color: "red", fontSize: "0.8rem", margin: 0 }}>{passwordError}</p>}
+            <div style={{ height: '20px', marginBottom: '10px' }}>
+                {passwordError && <p>{passwordError}</p>}
             </div>
             <form onSubmit={handleSaveData}>
                 <button type="submit" disabled={isButtonDisabled}>
                     {isLoading ? '通信中...' : '新規登録'}
                 </button>
             </form>
+        </div>
         </div>
     )
 }
