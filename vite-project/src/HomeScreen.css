@@ -121,12 +121,11 @@
   height: 140px;
   padding: 10px;
   box-sizing: border-box;
-  
   background-color: #FF9800;
   color: white;
   text-decoration: none;
   border-radius: 10px;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: bold;
   border: none;
   cursor: pointer;
@@ -145,7 +144,7 @@
   background-color: #5D4037;
 }
 
-.login:hover {
-  background-color: #4E342E;
+.login:hover{
+  background-color: #4b342d;
   color: white;
 }
