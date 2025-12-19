@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import '../index.css'
+import './Login.css'
 
 export const Login = () => {
     const navigate = useNavigate();
@@ -97,6 +97,7 @@ export const Login = () => {
     }
 
     return(
+        <div className='LoginRoot'>
         <div className='Login'>
             <h2>Login Page</h2>
 
@@ -107,8 +108,8 @@ export const Login = () => {
                 onChange={handleEmailChange}
                 placeholder="username@example.com"
             required/>
-            <div style={{ height: '20px', marginTop: '5px' }}>
-                {emailError && <p style={{ color: "red", fontSize: "0.8rem", margin: 0 }}>{emailError}</p>}
+            <div style={{ height: '20px'}}>
+                {emailError && <p>{emailError}</p>}
             </div>
             <input type="password"
                 name="password"
@@ -116,8 +117,8 @@ export const Login = () => {
                 placeholder="password"
                 onChange={handlePasswordChange}
             required/>
-            <div style={{ height: '20px', marginTop: '5px' }}>
-                {passwordError && <p style={{ color: "red", fontSize: "0.8rem", margin: 0 }}>{passwordError}</p>}
+            <div style={{ height: '20px', marginBottom: '10px' }}>
+                {passwordError && <p>{passwordError}</p>}
             </div>
             <form onSubmit={handleCheckSubmit}>
                 <button type="submit" disabled={isButtonDisabled}>
@@ -125,6 +126,7 @@ export const Login = () => {
                 </button>
                 {loginError && <p style={{ color: 'red' }}>{loginError}</p>}
             </form>
+        </div>
         </div>
     )
 }
