@@ -28,7 +28,7 @@ function HomeScreen() {
                     </div>
                     <button 
                         onClick={addSteps} 
-                        style={{ marginTop: '10px', padding: '5px 10px' }}
+                        className="add-steps-btn"
                     >
                         +
                     </button>
