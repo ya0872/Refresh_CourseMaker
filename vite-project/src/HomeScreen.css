@@ -62,7 +62,7 @@
   }
 }
 
-.coupon,
+.couponreward,
 .course-create,
 .course-view,
 .login {
@@ -87,7 +87,7 @@
   transition: background-color 0.2s;
 }
 
-.coupon:hover,
+.couponreward:hover,
 .course-create:hover,
 .course-view:hover,
 .login:hover {

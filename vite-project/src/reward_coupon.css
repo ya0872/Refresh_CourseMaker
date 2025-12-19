@@ -9,6 +9,7 @@
   padding: 20px;
 }
 
+/* 既存のスタイル */
 .reward-card {
   display: flex;
   justify-content: space-between;
@@ -16,3 +17,61 @@
   padding: 10px;
   margin-top: 10px;
 }
+
+/* 以前の回答で提案した追加スタイル */
+.section {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.button-link {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+.button-link:hover {
+    background: #0056b3;
+}
+
+#coupon-list, #used-coupons, #history-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.coupon-item, .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ccc;
+}
+
+.coupon-item:last-child, .history-item:last-child {
+    border-bottom: none;
+}
+
+/* 達成済みリワードのボタンとテキストのスタイル */
+.reward-card button:disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: default;
+}
+
+/* 達成済みリワードのテキストを打ち消し線とグレーにするには、
+   TSX側で cleared: true の場合に .cleared クラスを div に付与し、
+   以下のようにCSSを定義するのがベストです。*/
+/* .reward-card.cleared div p {
+    text-decoration: line-through;
+    color: gray;
+} */
+
+
+/* 画像で警告が出ていた空のルールセットは削除します */
+/* .reward-card div p:first-child { } */

@@ -14,7 +14,7 @@ function HomeScreen() {
             </header>
 
             <div className="home">
-                <Link to="/coupon" className="coupon">
+                <Link to="/couponreward" className="coupon-reward">
                     特典・クーポン機能
                 </Link>
 
