@@ -19,7 +19,6 @@ interface HistoryEntry {
     text: string;
     timestamp: string;
 }
-
 const initialCoupons: Coupon[] = [
     { title: "10ポイントでドリンク半額クーポン", cost: 10 },
     { title: "30ポイントでデザート30％割引クーポン", cost: 30 },
@@ -147,9 +146,17 @@ export default function CouponReward() {
 
   return (
     <div className="container">
-      <h1>🏠 ホーム</h1>
-      <a href="admin.html" className="button-link" style={{margin: '10px 0', display: 'inline-block'}}>⚙️ 管理者ページへ</a>
+      <h1>🏠 クーポン・リワード</h1>
 
+{/* 2. ナビゲーションボタンの追加 */}
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <a href="./HomeScreen" className="button-link" style={{ background: '#6c757d' }}>
+          🏠 ホーム画面に戻る
+        </a>
+        <a href="./couponadmin" className="button-link">
+          ⚙️ 管理者ページへ
+        </a>
+      </div>
 
       {/* 現在のポイント */}
       <div className="section">

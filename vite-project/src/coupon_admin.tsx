@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"; 
 import './reward_coupon.css';
 
+
 interface AdminReward {
     id: number | string;
     title: string;
@@ -76,7 +77,7 @@ export default function Admin() {
       <h1>⚙️ 管理者ページ</h1>
       
       {/* リワード・クーポンページに戻るボタン */}
-      <a href="./" className="button-link" style={{margin: '10px 0', display: 'inline-block'}}>
+      <a href="./couponreward" className="button-link" style={{margin: '10px 0', display: 'inline-block'}}>
         🏠 リワード・クーポンページに戻る
       </a>
       
