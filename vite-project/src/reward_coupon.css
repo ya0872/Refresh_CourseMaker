@@ -1,77 +1,98 @@
-.nav {
-  display: flex;
-  gap: 20px;
-  background-color: #eee;
-  padding: 10px;
-}
-
+/* HomeScreen.css のテーマに合わせる */
 .container {
   padding: 20px;
+  background-color: #FFF3E0; /* ホームと同じ背景色 */
+  min-height: 100vh;
+  font-family: sans-serif;
 }
 
-/* 既存のスタイル */
-.reward-card {
+h1 {
+  background-color: #FF6F00; /* ヘッダーと同じ色 */
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin: -20px -20px 20px -20px;
+  font-size: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.section {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid #FFE0B2;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.section h2 {
+  color: #E65100;
+  font-size: 1.2rem;
+  margin-top: 0;
+  border-bottom: 2px solid #FFF3E0;
+  padding-bottom: 10px;
+}
+
+/* ポイント表示の強調 */
+#points {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #FF6F00;
+  text-align: center;
+  margin: 10px 0;
+}
+
+/* リワード・クーポンカードの共通スタイル */
+.reward-card, .coupon-item, .history-item {
   display: flex;
   justify-content: space-between;
-  background: #f4f4f4;
-  padding: 10px;
+  align-items: center;
+  padding: 15px;
+  background: #FFFBF5;
+  border-radius: 10px;
   margin-top: 10px;
+  border: 1px solid #FFE0B2;
 }
 
-/* 以前の回答で提案した追加スタイル */
-.section {
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* ボタンのデザインを HomeScreen の add-steps-btn に合わせる */
+button, .button-link {
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  background-color: #FFD180;
+  color: #5D4037;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.2s;
+  display: inline-block;
+  text-align: center;
 }
 
-.button-link {
-    display: inline-block;
-    padding: 8px 16px;
-    background: #007bff;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin: 10px 0;
-}
-.button-link:hover {
-    background: #0056b3;
+button:hover, .button-link:hover {
+  background-color: #FFB74D;
 }
 
-#coupon-list, #used-coupons, #history-list {
-    padding-left: 0;
-    list-style: none;
+button:disabled {
+  background-color: #EEEEEE;
+  color: #999;
+  cursor: not-allowed;
 }
 
-.coupon-item, .history-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px dotted #ccc;
+/* 管理者ページ用の入力フォーム */
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #FFE0B2;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
 
-.coupon-item:last-child, .history-item:last-child {
-    border-bottom: none;
+/* ナビゲーションエリア */
+.nav-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
 }
-
-/* 達成済みリワードのボタンとテキストのスタイル */
-.reward-card button:disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: default;
-}
-
-/* 達成済みリワードのテキストを打ち消し線とグレーにするには、
-   TSX側で cleared: true の場合に .cleared クラスを div に付与し、
-   以下のようにCSSを定義するのがベストです。*/
-/* .reward-card.cleared div p {
-    text-decoration: line-through;
-    color: gray;
-} */
-
-
-/* 画像で警告が出ていた空のルールセットは削除します */
-/* .reward-card div p:first-child { } */
